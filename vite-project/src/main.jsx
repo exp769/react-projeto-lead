@@ -8,7 +8,6 @@ const leads = [
   {name: "Alexandre Russi Junior", email: "ale@email.com", numPhone: "+55 11 98765-4321"},
   {name: "Alexandre Russi Junior", email: "ale@email.com", numPhone: "+55 11 98765-4321"},
   {name: "Alexandre Russi Junior", email: "ale@email.com", numPhone: "+55 11 98765-4321"},
-  {name: "Alexandre Russi Junior", email: "ale@email.com", numPhone: "+55 11 98765-4321"},
   {name: "Alexandre Russi Junior", email: "ale@email.com", numPhone: "+55 11 98765-4321"}
 ];
 

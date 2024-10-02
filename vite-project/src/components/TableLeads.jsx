@@ -1,7 +1,19 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import TableRow from "./TableRow";
+import "./Table.css"
 class TableLeads extends React.Component{
     render(){
+        console.log(this.props.leads);
+        const rows = [];
+        this.props.leads.forEach(lead => {
+            rows.push(
+                <TableRow 
+                name={lead.name}
+                email={lead.email}
+                numPhone={lead.numPhone}/>);
+        });
+
         return(
             <table>
                 <thead>
@@ -13,10 +25,7 @@ class TableLeads extends React.Component{
                     </tr>
                 </thead>
                 <tbody>
-                    <TableRow 
-                        name="Joãozinho"
-                        email="joao@email.com"
-                        numPhone="11 90394-2021"/>
+                    {rows}
                 </tbody>
             </table>
         );
