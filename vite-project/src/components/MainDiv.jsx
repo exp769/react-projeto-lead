@@ -5,13 +5,15 @@ import Form from "./Form";
 import TableLeads from "./TableLeads";
 import "./MainDiv.css"
 
-class Main extends React.Component{
+class Main extends React.Component {
     constructor (props) {
-        super(props)
+        super(props);
+
         let leads = props.leads;
+
         this.state = {
             leads
-        };
+        }
     }
 
     onHandleSubmit = (lead) => {
@@ -20,12 +22,21 @@ class Main extends React.Component{
         })
     }
 
-    render() {
+    onHandleDeleteLead = (index) => {
+        const { leads } = this.state;
 
+        this.setState({
+            leads: leads.filter((leads, i) => {
+                return i != index;
+            })
+        })
+    }
+
+    render() {
         return(
             <main>
                 <Form onHandleSubmit={this.onHandleSubmit}/>
-                <TableLeads leads={this.props.leads}/>
+                <TableLeads leads = {this.state.leads} onDeleteLead={this.onHandleDeleteLead}/>
             </main>
         )
     }
